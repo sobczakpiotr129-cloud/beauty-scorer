@@ -3,9 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-<title>颜值打分器</title>
+<title>棰滃€兼墦鍒嗗櫒</title>
 <style>
-/* ===== 基础重置 ===== */
+/* ===== 鍩虹閲嶇疆 ===== */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 body {
@@ -19,13 +19,13 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* ===== 主容器 ===== */
+/* ===== 涓诲鍣?===== */
 .container {
   width: 100%;
   max-width: 420px;
 }
 
-/* ===== 标题 ===== */
+/* ===== 鏍囬 ===== */
 .header {
   text-align: center;
   margin-bottom: 20px;
@@ -42,7 +42,7 @@ body {
   margin-top: 4px;
 }
 
-/* ===== 卡片通用样式 ===== */
+/* ===== 鍗＄墖閫氱敤鏍峰紡 ===== */
 .card {
   background: #fff;
   border-radius: 16px;
@@ -52,7 +52,7 @@ body {
   transition: box-shadow 0.3s;
 }
 
-/* ===== API Key 区域 ===== */
+/* ===== API Key 鍖哄煙 ===== */
 .api-key-section {
   display: none;
 }
@@ -106,7 +106,7 @@ body {
 .api-key-status.success { color: #4caf50; }
 .api-key-status.error { color: #e88; }
 
-/* ===== 上传区域 ===== */
+/* ===== 涓婁紶鍖哄煙 ===== */
 .upload-area {
   border: 2px dashed #c5ddf5;
   border-radius: 14px;
@@ -142,7 +142,7 @@ body {
   display: none;
 }
 
-/* ===== 主卡片（上传后显示，照片始终可见） ===== */
+/* ===== 涓诲崱鐗囷紙涓婁紶鍚庢樉绀猴紝鐓х墖濮嬬粓鍙锛?===== */
 .main-card {
   display: none;
 }
@@ -150,7 +150,7 @@ body {
   display: block;
 }
 
-/* 照片区 */
+/* 鐓х墖鍖?*/
 .main-photo-wrap {
   border-radius: 12px;
   overflow: hidden;
@@ -164,7 +164,7 @@ body {
   object-fit: contain;
 }
 
-/* 操作按钮 */
+/* 鎿嶄綔鎸夐挳 */
 .photo-actions {
   display: flex;
   gap: 10px;
@@ -198,7 +198,7 @@ body {
   cursor: not-allowed;
 }
 
-/* 加载中（内嵌在照片下方） */
+/* 鍔犺浇涓紙鍐呭祵鍦ㄧ収鐗囦笅鏂癸級 */
 .loading-inline {
   display: none;
   text-align: center;
@@ -224,7 +224,7 @@ body {
   to { transform: rotate(360deg); }
 }
 
-/* 结果区 */
+/* 缁撴灉鍖?*/
 .result-content {
   display: none;
 }
@@ -232,7 +232,7 @@ body {
   display: block;
 }
 
-/* 总分卡片 */
+/* 鎬诲垎鍗＄墖 */
 .score-card {
   text-align: center;
   padding: 20px;
@@ -267,7 +267,7 @@ body {
   font-weight: 600;
 }
 
-/* 各维度评分 */
+/* 鍚勭淮搴﹁瘎鍒?*/
 .breakdown {
   display: flex;
   flex-direction: column;
@@ -308,7 +308,7 @@ body {
   text-align: right;
 }
 
-/* ===== 重新开始按钮 ===== */
+/* ===== 閲嶆柊寮€濮嬫寜閽?===== */
 .btn-restart-wrap {
   text-align: center;
   margin-top: 16px;
@@ -328,7 +328,7 @@ body {
   border-color: #5b9bd5;
 }
 
-/* ===== 错误提示 ===== */
+/* ===== 閿欒鎻愮ず ===== */
 .error-msg {
   display: none;
   text-align: center;
@@ -343,7 +343,7 @@ body {
   display: block;
 }
 
-/* ===== 设置按钮 ===== */
+/* ===== 璁剧疆鎸夐挳 ===== */
 .settings-toggle {
   text-align: center;
   margin-top: 12px;
@@ -360,7 +360,7 @@ body {
   color: #5b9bd5;
 }
 
-/* ===== 底部 ===== */
+/* ===== 搴曢儴 ===== */
 .footer {
   text-align: center;
   margin-top: 8px;
@@ -372,85 +372,85 @@ body {
 <body>
 
 <div class="container">
-  <!-- 标题 -->
+  <!-- 鏍囬 -->
   <div class="header">
-    <h1>颜值打分器</h1>
-    <p>上传照片 · AI 智能评分</p>
+    <h1>棰滃€兼墦鍒嗗櫒</h1>
+    <p>涓婁紶鐓х墖 路 AI 鏅鸿兘璇勫垎</p>
   </div>
 
-  <!-- API Key 设置 -->
+  <!-- API Key 璁剧疆 -->
   <div class="card api-key-section" id="apiKeySection">
     <div class="hint">
-      首次使用请输入通义千问 API Key<br>
-      <a href="https://dashscope.console.aliyun.com/apiKey" target="_blank">点此免费获取 →</a>
+      棣栨浣跨敤璇疯緭鍏ラ€氫箟鍗冮棶 API Key<br>
+      <a href="https://dashscope.console.aliyun.com/apiKey" target="_blank">鐐规鍏嶈垂鑾峰彇 鈫?/a>
     </div>
     <div class="api-key-row">
-      <input type="password" id="apiKeyInput" placeholder="粘贴 API Key">
-      <button onclick="saveApiKey()">保存</button>
+      <input type="password" id="apiKeyInput" placeholder="绮樿创 API Key">
+      <button onclick="saveApiKey()">淇濆瓨</button>
     </div>
     <div class="api-key-status" id="apiKeyStatus"></div>
   </div>
 
-  <!-- 上传区域 -->
+  <!-- 涓婁紶鍖哄煙 -->
   <div class="card upload-area" id="uploadArea" onclick="document.getElementById('fileInput').click()">
-    <div class="upload-icon">📷</div>
-    <div class="upload-text">点击上传人像照片</div>
-    <div class="upload-sub">支持 JPG / PNG，也可拖拽到此处</div>
+    <div class="upload-icon">馃摲</div>
+    <div class="upload-text">鐐瑰嚮涓婁紶浜哄儚鐓х墖</div>
+    <div class="upload-sub">鏀寔 JPG / PNG锛屼篃鍙嫋鎷藉埌姝ゅ</div>
   </div>
   <input type="file" id="fileInput" accept="image/*" onchange="handleFileSelect(event)">
 
-  <!-- 主卡片：照片 + 操作 + 加载 + 结果 -->
+  <!-- 涓诲崱鐗囷細鐓х墖 + 鎿嶄綔 + 鍔犺浇 + 缁撴灉 -->
   <div class="card main-card" id="mainCard">
-    <!-- 照片始终显示 -->
+    <!-- 鐓х墖濮嬬粓鏄剧ず -->
     <div class="main-photo-wrap">
-      <img id="mainPhoto" src="" alt="照片">
+      <img id="mainPhoto" src="" alt="鐓х墖">
     </div>
 
-    <!-- 操作按钮 -->
+    <!-- 鎿嶄綔鎸夐挳 -->
     <div class="photo-actions" id="photoActions">
-      <button class="btn-reselect" onclick="reselectImage()">重新选择</button>
-      <button class="btn-score" id="btnScore" onclick="startScoring()">开始评分</button>
+      <button class="btn-reselect" onclick="reselectImage()">閲嶆柊閫夋嫨</button>
+      <button class="btn-score" id="btnScore" onclick="startScoring()">寮€濮嬭瘎鍒?/button>
     </div>
 
-    <!-- 加载中 -->
+    <!-- 鍔犺浇涓?-->
     <div class="loading-inline" id="loadingInline">
       <div class="spinner-sm"></div>
-      <span>AI 正在分析中，请稍候……</span>
+      <span>AI 姝ｅ湪鍒嗘瀽涓紝璇风◢鍊欌€︹€?/span>
     </div>
 
-    <!-- 评分结果 -->
+    <!-- 璇勫垎缁撴灉 -->
     <div class="result-content" id="resultContent">
       <div class="score-card">
         <div class="score-big" id="scoreBig">--</div>
-        <div class="score-label">综合评分</div>
+        <div class="score-label">缁煎悎璇勫垎</div>
         <div class="score-comment" id="scoreComment"></div>
       </div>
       <div class="breakdown" id="breakdown"></div>
       <div class="btn-restart-wrap">
-        <button class="btn-restart" onclick="restart()">重新上传评分</button>
+        <button class="btn-restart" onclick="restart()">閲嶆柊涓婁紶璇勫垎</button>
       </div>
     </div>
 
     <div class="error-msg" id="errorMsg"></div>
   </div>
 
-  <!-- 设置入口 -->
+  <!-- 璁剧疆鍏ュ彛 -->
   <div class="settings-toggle">
-    <button onclick="toggleApiKeySection()">修改 API Key</button>
+    <button onclick="toggleApiKeySection()">淇敼 API Key</button>
   </div>
 
-  <!-- 底部 -->
-  <div class="footer">评分结果由 AI 生成，仅供参考娱乐</div>
+  <!-- 搴曢儴 -->
+  <div class="footer">璇勫垎缁撴灉鐢?AI 鐢熸垚锛屼粎渚涘弬鑰冨ū涔?/div>
 </div>
 
 <script>
-// ===== 常量 =====
+// ===== 甯搁噺 =====
 const QWEN_API_URL = 'https://dashscope.aliyuncs.com/compatible-mode/v1/chat/completions';
 const DEFAULT_API_KEY = 'sk-e629a4cc6a4f41679731231606ab8a09';
 const STORAGE_KEY = 'beauty_rater_api_key';
 const MAX_IMAGE_SIZE = 10 * 1024 * 1024; // 10MB
 
-// ===== DOM 元素 =====
+// ===== DOM 鍏冪礌 =====
 const $ = (id) => document.getElementById(id);
 const apiKeySection = $('apiKeySection');
 const apiKeyInput = $('apiKeyInput');
@@ -470,26 +470,26 @@ const errorMsg = $('errorMsg');
 
 let currentImageData = null; // { base64, mimeType, dataUrl }
 
-// ===== 初始化 =====
+// ===== 鍒濆鍖?=====
 function init() {
   const savedKey = localStorage.getItem(STORAGE_KEY);
   if (savedKey) {
     apiKeyInput.value = savedKey;
   }
-  // 已内置默认 Key，直接使用，无需弹出设置
+  // 宸插唴缃粯璁?Key锛岀洿鎺ヤ娇鐢紝鏃犻渶寮瑰嚭璁剧疆
   setupDragDrop();
 }
 init();
 
-// ===== API Key 管理 =====
+// ===== API Key 绠＄悊 =====
 function saveApiKey() {
   const key = apiKeyInput.value.trim();
   if (!key) {
-    showApiKeyStatus('请输入 API Key', 'error');
+    showApiKeyStatus('璇疯緭鍏?API Key', 'error');
     return;
   }
   localStorage.setItem(STORAGE_KEY, key);
-  showApiKeyStatus('API Key 已保存', 'success');
+  showApiKeyStatus('API Key 宸蹭繚瀛?, 'success');
   setTimeout(function() {
     apiKeySection.classList.remove('show');
     apiKeyStatus.textContent = '';
@@ -510,7 +510,7 @@ function toggleApiKeySection() {
   apiKeySection.classList.toggle('show');
 }
 
-// ===== 图片上传 =====
+// ===== 鍥剧墖涓婁紶 =====
 function handleFileSelect(event) {
   var file = event.target.files[0];
   if (!file) return;
@@ -532,7 +532,7 @@ function setupDragDrop() {
     if (file) processFile(file);
   });
 
-  // 支持粘贴图片
+  // 鏀寔绮樿创鍥剧墖
   document.addEventListener('paste', function(e) {
     var items = e.clipboardData.items;
     for (var i = 0; i < items.length; i++) {
@@ -546,11 +546,11 @@ function setupDragDrop() {
 
 function processFile(file) {
   if (file.type.indexOf('image/') !== 0) {
-    showError('请选择图片文件');
+    showError('璇烽€夋嫨鍥剧墖鏂囦欢');
     return;
   }
   if (file.size > MAX_IMAGE_SIZE) {
-    showError('图片不能超过 10MB');
+    showError('鍥剧墖涓嶈兘瓒呰繃 10MB');
     return;
   }
 
@@ -628,16 +628,16 @@ function reselectImage() {
   fileInput.value = '';
 }
 
-// ===== 评分 =====
+// ===== 璇勫垎 =====
 function startScoring() {
   var apiKey = getApiKey();
   if (!apiKey) {
     apiKeySection.classList.add('show');
-    showError('请先设置通义千问 API Key');
+    showError('璇峰厛璁剧疆閫氫箟鍗冮棶 API Key');
     return;
   }
   if (!currentImageData) {
-    showError('请先上传照片');
+    showError('璇峰厛涓婁紶鐓х墖');
     return;
   }
 
@@ -650,14 +650,14 @@ function startScoring() {
     displayResult(result);
   }).catch(function(err) {
     photoActions.style.display = 'flex';
-    showError(err.message || '评分失败，请重试');
+    showError(err.message || '璇勫垎澶辫触锛岃閲嶈瘯');
   }).finally(function() {
     loadingInline.classList.remove('show');
   });
 }
 
 async function callQwenAPI(apiKey, imageData) {
-  var prompt = '你是一位严格的面部美学分析师。请以批判性眼光审视照片，从严评分。大多数人处于40-68分区间，70分即为明显好看，80分以上极少见，90分仅属于顶级明星/超模。\n\n## 评分维度（1-100，保留两位小数）\n\n1. features：五官协调度（三庭五眼比例、眉眼眼鼻关系、唇齿下颌协调）\n2. symmetry：面部对称性（左右脸、眉眼、鼻唇沟对称度）\n3. skin：皮肤状态（均匀度、细腻度、瑕疵）\n4. faceShape：脸型轮廓（下颌线、颧骨比例、轮廓流畅度）\n5. boneStructure：骨相结构（鼻梁、眉弓眼窝、下颌颏部）\n6. temperament：气质神态（眼神、气场、微表情）\n\n## 严格评分参考\n90-100: 绝世罕见（顶级超模/明星级别）\n80-89: 极其出众（百里挑一）\n70-79: 明显好看（人群中亮眼）\n60-69: 中上（比普通人略好）\n50-59: 普通水平\n40-49: 中下（有些不足）\n30-39: 明显偏弱\n0-29: 需要较大改善\n\n## 输出格式（仅返回纯 JSON）\n{\n  "overall": 62.35,\n  "features": 60.50,\n  "symmetry": 58.00,\n  "skin": 65.25,\n  "faceShape": 63.00,\n  "boneStructure": 55.50,\n  "temperament": 68.75,\n  "comment": "分点评语（每点换行，重点用**加粗**）"\n}\n\n## comment 评语要求\n输出 3-5 条精简评语，每条不超过 40 字，用 \n 分隔。格式：每条以 > 开头，重点词汇用 **文字** 包裹加粗。示例：\n> 五官中**眼睛**最为出彩，眼型流畅且**对称度高**，为面部加分\n> **下颌线**略宽，削弱了整体精致感，可通过发型修饰\n> 整体属于**清秀耐看型**，气质温和，适合淡妆路线\n\n若照片无法看清人脸或非真人，所有分数设为 0，comment 说明原因。';
+  var prompt = '浣犳槸涓€浣嶄弗鏍肩殑闈㈤儴缇庡鍒嗘瀽甯堛€傝浠ユ壒鍒ゆ€х溂鍏夊瑙嗙収鐗囷紝浠庝弗璇勫垎銆傚ぇ澶氭暟浜哄浜?0-68鍒嗗尯闂达紝70鍒嗗嵆涓烘槑鏄惧ソ鐪嬶紝80鍒嗕互涓婃瀬灏戣锛?0鍒嗕粎灞炰簬椤剁骇鏄庢槦/瓒呮ā銆俓n\n## 璇勫垎缁村害锛?-100锛屼繚鐣欎袱浣嶅皬鏁帮級\n\n1. features锛氫簲瀹樺崗璋冨害锛堜笁搴簲鐪兼瘮渚嬨€佺湁鐪肩溂榧诲叧绯汇€佸攪榻夸笅棰屽崗璋冿級\n2. symmetry锛氶潰閮ㄥ绉版€э紙宸﹀彸鑴搞€佺湁鐪笺€侀蓟鍞囨矡瀵圭О搴︼級\n3. skin锛氱毊鑲ょ姸鎬侊紙鍧囧寑搴︺€佺粏鑵诲害銆佺憰鐤碉級\n4. faceShape锛氳劯鍨嬭疆寤擄紙涓嬮绾裤€侀ⅶ楠ㄦ瘮渚嬨€佽疆寤撴祦鐣呭害锛塡n5. boneStructure锛氶鐩哥粨鏋勶紙榧绘銆佺湁寮撶溂绐濄€佷笅棰岄閮級\n6. temperament锛氭皵璐ㄧ鎬侊紙鐪肩銆佹皵鍦恒€佸井琛ㄦ儏锛塡n\n## 涓ユ牸璇勫垎鍙傝€僜n90-100: 缁濅笘缃曡锛堥《绾ц秴妯?鏄庢槦绾у埆锛塡n80-89: 鏋佸叾鍑轰紬锛堢櫨閲屾寫涓€锛塡n70-79: 鏄庢樉濂界湅锛堜汉缇や腑浜溂锛塡n60-69: 涓笂锛堟瘮鏅€氫汉鐣ュソ锛塡n50-59: 鏅€氭按骞砛n40-49: 涓笅锛堟湁浜涗笉瓒筹級\n30-39: 鏄庢樉鍋忓急\n0-29: 闇€瑕佽緝澶ф敼鍠刓n\n## 杈撳嚭鏍煎紡锛堜粎杩斿洖绾?JSON锛塡n{\n  "overall": 62.37,\n  "features": 60.82,\n  "symmetry": 58.14,\n  "skin": 65.29,\n  "faceShape": 63.41,\n  "boneStructure": 55.68,\n  "temperament": 68.93,\n  "comment": "鍒嗙偣璇勮锛堟瘡鐐规崲琛岋紝閲嶇偣鐢?*鍔犵矖**锛?\n}\n\n## 閲嶈锛氬垎鏁扮湡瀹炴€ц姹俓n姣忎釜鍒嗘暟鐨勫皬鏁伴儴鍒嗗繀椤婚殢鏈轰笖澶氭牱鍖栵紝涓ョ浠?0 鎴?5 缁撳熬锛堝 .00 .05 .10 .25 .50 .75 绛夌粺缁熺姝級銆傝鍒嗘暟鐪嬭捣鏉ュ儚绮惧瘑浠櫒娴嬮噺缁撴灉锛屼笉瑕佹湁瑙勫緥鍙惊銆俓n\n## comment 璇勮瑕佹眰\n杈撳嚭 3-5 鏉＄簿绠€璇勮锛屾瘡鏉′笉瓒呰繃 40 瀛楋紝鐢?\n 鍒嗛殧銆傛牸寮忥細姣忔潯浠?> 寮€澶达紝閲嶇偣璇嶆眹鐢?**鏂囧瓧** 鍖呰９鍔犵矖銆傜ず渚嬶細\n> 浜斿畼涓?*鐪肩潧**鏈€涓哄嚭褰╋紝鐪煎瀷娴佺晠涓?*瀵圭О搴﹂珮**锛屼负闈㈤儴鍔犲垎\n> **涓嬮绾?*鐣ュ锛屽墛寮变簡鏁翠綋绮捐嚧鎰燂紝鍙€氳繃鍙戝瀷淇グ\n> 鏁翠綋灞炰簬**娓呯鑰愮湅鍨?*锛屾皵璐ㄦ俯鍜岋紝閫傚悎娣″璺嚎\n\n鑻ョ収鐗囨棤娉曠湅娓呬汉鑴告垨闈炵湡浜猴紝鎵€鏈夊垎鏁拌涓?0锛宑omment 璇存槑鍘熷洜銆?;
 
   var body = {
     model: 'qwen-vl-max',
@@ -683,23 +683,23 @@ async function callQwenAPI(apiKey, imageData) {
 
   if (!resp.ok) {
     if (resp.status === 400) {
-      throw new Error('请求无效，请检查图片格式');
+      throw new Error('璇锋眰鏃犳晥锛岃妫€鏌ュ浘鐗囨牸寮?);
     } else if (resp.status === 401 || resp.status === 403) {
-      throw new Error('API Key 无效或未开通权限');
+      throw new Error('API Key 鏃犳晥鎴栨湭寮€閫氭潈闄?);
     } else if (resp.status === 429) {
-      throw new Error('请求过于频繁，请稍后再试');
+      throw new Error('璇锋眰杩囦簬棰戠箒锛岃绋嶅悗鍐嶈瘯');
     } else {
-      throw new Error('API 请求失败 (HTTP ' + resp.status + ')');
+      throw new Error('API 璇锋眰澶辫触 (HTTP ' + resp.status + ')');
     }
   }
 
   var data = await resp.json();
   var text = data.choices && data.choices[0] && data.choices[0].message && data.choices[0].message.content;
   if (!text) {
-    throw new Error('AI 未返回有效结果，请重试');
+    throw new Error('AI 鏈繑鍥炴湁鏁堢粨鏋滐紝璇烽噸璇?);
   }
 
-  // 尝试解析 JSON（处理可能的 markdown 代码块包裹）
+  // 灏濊瘯瑙ｆ瀽 JSON锛堝鐞嗗彲鑳界殑 markdown 浠ｇ爜鍧楀寘瑁癸級
   var jsonStr = text.trim();
   var codeBlockMatch = jsonStr.match(/```(?:json)?\s*([\s\S]*?)\s*```/);
   if (codeBlockMatch) {
@@ -718,20 +718,19 @@ function displayResult(result) {
   scoreComment.innerHTML = commentHtml;
 
   var dims = [
-    { key: 'features', label: '五官协调度', score: clampScore(result.features) },
-    { key: 'symmetry', label: '面部对称性', score: clampScore(result.symmetry) },
-    { key: 'skin', label: '皮肤状态', score: clampScore(result.skin) },
-    { key: 'faceShape', label: '脸型轮廓', score: clampScore(result.faceShape) },
-    { key: 'boneStructure', label: '骨相结构', score: clampScore(result.boneStructure) },
-    { key: 'temperament', label: '气质神态', score: clampScore(result.temperament) }
+    { key: 'features', label: '浜斿畼鍗忚皟搴?, score: clampScore(result.features) },
+    { key: 'symmetry', label: '闈㈤儴瀵圭О鎬?, score: clampScore(result.symmetry) },
+    { key: 'skin', label: '鐨偆鐘舵€?, score: clampScore(result.skin) },
+    { key: 'faceShape', label: '鑴稿瀷杞粨', score: clampScore(result.faceShape) },
+    { key: 'boneStructure', label: '楠ㄧ浉缁撴瀯', score: clampScore(result.boneStructure) },
+    { key: 'temperament', label: '姘旇川绁炴€?, score: clampScore(result.temperament) }
   ];
 
   breakdown.innerHTML = dims.map(function(d) {
     return '<div class="dim-item"><div class="dim-label">' + d.label + '</div><div class="dim-bar-wrap"><div class="dim-bar" style="width:' + d.score + '%"></div></div><div class="dim-score">' + d.score.toFixed(2) + '</div></div>';
   }).join('');
 
-  // 延迟触发进度条动画
-  requestAnimationFrame(function() {
+  // 寤惰繜瑙﹀彂杩涘害鏉″姩鐢?  requestAnimationFrame(function() {
     var bars = breakdown.querySelectorAll('.dim-bar');
     for (var i = 0; i < bars.length; i++) {
       var bar = bars[i];
@@ -751,9 +750,9 @@ function formatComment(text) {
   for (var i = 0; i < lines.length; i++) {
     var line = lines[i].trim();
     if (!line) continue;
-    // 去掉开头的 > 标记
+    // 鍘绘帀寮€澶寸殑 > 鏍囪
     line = line.replace(/^>\s*/, '');
-    // **文字** 转 <strong>文字</strong>
+    // **鏂囧瓧** 杞?<strong>鏂囧瓧</strong>
     line = line.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
     html += '<span class="bullet">' + line + '</span>';
   }
@@ -766,7 +765,7 @@ function clampScore(val) {
   return Math.max(0, Math.min(100, num));
 }
 
-// ===== 工具函数 =====
+// ===== 宸ュ叿鍑芥暟 =====
 function showError(msg) {
   errorMsg.textContent = msg;
   errorMsg.classList.add('show');
